@@ -11,6 +11,17 @@ void reverseString(string& s) {
 
 }
 
+void pushZeros(string& minString, const string& maxString) {
+
+	int i = minString.size();
+
+	while (i < maxString.size()) {
+		minString += '0';
+		i += 1;
+	}
+
+}
+
 int main() {
 	string first;
 	string second;
@@ -34,6 +45,9 @@ int main() {
 
 	reverseString(maxString);
 	reverseString(minString);
+
+	pushZeros(minString, maxString);
+
 
 	return 0;
 }
