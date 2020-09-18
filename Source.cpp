@@ -22,6 +22,29 @@ void pushZeros(string& minString, const string& maxString) {
 
 }
 
+string sum(const string& minString, const string& maxString) {
+	string result;
+
+	char dec = '0';
+	char units = '0';
+
+	for (long long int i = 0; i < maxString.size(); i++) {
+
+		int x = dec - '0' + maxString[i] - '0' + minString[i] - '0';
+
+		dec = x / 10 + '0';
+		units = x % 10 + '0';
+
+		result += units;
+
+	}
+	if (dec != '0') {
+		result += dec;
+	}
+
+	return result;
+}
+
 int main() {
 	string first;
 	string second;
@@ -48,6 +71,7 @@ int main() {
 
 	pushZeros(minString, maxString);
 
+	result = sum(minString, maxString);
 
 	return 0;
 }
