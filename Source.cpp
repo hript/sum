@@ -3,6 +3,14 @@
 
 using namespace std;
 
+void reverseString(string& s) {
+
+	for (long long int i = 0; i < s.size() / 2; i++) {
+		swap(s[i], s[s.size() - 1 - i]);
+	}
+
+}
+
 int main() {
 	string first;
 	string second;
@@ -24,6 +32,8 @@ int main() {
 		minString = first;
 	}
 
+	reverseString(maxString);
+	reverseString(minString);
 
 	return 0;
 }
